@@ -22,3 +22,13 @@ class UI():
             print(f'Ошибки ({error_count}):', ', '.join(errors))
 
         print('У вас осталось ошибок:', 7 - error_count)
+
+    def check(self):
+        if self.game.is_won():
+            print('Игра пройдена!')
+            return True
+        if self.game.is_lost():
+            print('Было загадано слово', self.game.get_actual_word())
+            print('Игра проиграна')
+            return True
+        return False

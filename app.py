@@ -13,17 +13,14 @@ ui = game_ui.UI(game)
 while True:
     ui.show()
     if DEBUG:
-        print(game.word)
+        print(random_line)
+
+    if ui.check():
+        break
+
     answer = input('Введите следующую букву: ').strip().lower()
     if len(answer) != 1:
         print('Вводите только одну букву!')
         continue
 
     game.guess(answer)
-
-    if game.is_won():
-        print('Игра пройдена!')
-        break
-    if game.is_lost():
-        print('Игра проиграна')
-        break

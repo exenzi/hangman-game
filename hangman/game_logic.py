@@ -56,5 +56,11 @@ class Logic():
         # Возвращает буквы, которые пользователь угадал неправильно
         return self.errors
 
+    def get_actual_word(self):
+        result = ""
+        for letter in self.word:
+            result += letter['char']
+        return result
+
     def __str__(self):
         return str(self.word)
